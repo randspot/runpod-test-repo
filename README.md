@@ -1,3 +1,10 @@
+## python env:
+`python3 -m venv venv`
+`source venv/bin/activate`
+`pip install runpod`
+
+
+
 README.md file
 
 Iny approach
@@ -27,22 +34,3 @@ wget --directory-prefix=./ComfyUI/models/vae/ https://huggingface.co/htdong/Wan-
 
 scp -P 50323 -i ~/.ssh/id_ed25519 RGBA_save_tools.py root@160.250.71.214:/workspace/runpod-slim/ComfyUI/custom_nodes/RGBA_save_tools.py
 
-
-TOTO NIE:
-- create disk
-- setup ComfyUI + WAN transparency
-- try out serverless ?
-
-## Steps
-- Create disk
-- Create Pod to set up env - dowmload models to the disk, etc.
-
-## Create disk
-- runpod.io -> Storage->New Netwrok Volue-> Select country + volue size
-
-## Create Pod
-- runpod.io -> Pods -> Select GPU (RTX 5090)
-- Change template to ComfyUI (official)
-- check SSH terminal access & Start Jupyter notebook
-- set the pod name
-- Deploy On-Demand
