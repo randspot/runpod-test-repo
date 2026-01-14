@@ -24,14 +24,7 @@ RUN wget --directory-prefix=./ComfyUI/models/vae/ \
 # Custon node
 COPY RGBA_save_tools.py ./ComfyUI/custom_nodes/RGBA_save_tools.py
 
-# clean up build artifacts
-RUN apt-get update && apt-get install -y build-essential \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apt-get remove -y build-essential \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY builder/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY handler.py ./handler.py
